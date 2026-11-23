@@ -1,0 +1,413 @@
+/* Colores y estilos generales */
+:root {
+    --azul: #1c69d4;
+    --azul-oscuro: #1453ab;
+    --fondo-oscuro: #111820;
+    --borde: #d9dfe4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #262626;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    line-height: 1.12;
+}
+
+h1, h2 {
+    font-weight: 600;
+    letter-spacing: -0.045em;
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 5.75rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.35rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1rem; }
+h1 + p, h2 + p, h3 + p { margin-top: 0.85rem; }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+figure { margin: 0; }
+address { font-style: normal; }
+
+.contenedor {
+    width: min(90%, 88rem);
+    margin-inline: auto;
+}
+
+.seccion { padding-block: clamp(3.2rem, 6.7vw, 7rem); }
+.fondo-gris { background: #f2f2f2; }
+.texto-limitado { max-width: 65ch; }
+
+.etiqueta {
+    margin: 0 0 0.75rem;
+    color: var(--azul-oscuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.encabezado-seccion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.2rem 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Cabecera y enlaces */
+.cabecera {
+    position: relative;
+    z-index: 1;
+    background: var(--fondo-oscuro);
+    color: #fff;
+}
+
+.cabecera-contenido {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 5rem;
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: fit-content;
+    color: inherit;
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.105em;
+    line-height: 1.15;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menu-navegacion,
+.navegacion-seccion ul,
+.pie-pagina ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-navegacion { height: 100%; }
+
+.menu-navegacion li { display: flex; }
+
+.menu-navegacion a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem clamp(0.75rem, 2vw, 1.5rem);
+    border-block: 3px solid transparent;
+    color: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion [aria-current="page"] {
+    border-bottom-color: #66aaff;
+    background: rgb(255 255 255 / 7%);
+}
+
+.salto {
+    position: absolute;
+    z-index: 2;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 1rem;
+    transform: translateY(-160%);
+    background: #fff;
+}
+
+.salto:focus { transform: none; }
+
+a { color: var(--azul-oscuro); }
+
+:focus-visible {
+    outline: 3px solid #2084eb;
+    outline-offset: 3px;
+}
+
+.cabecera :focus-visible,
+.pie-pagina :focus-visible {
+    outline-color: #a9d0ff;
+}
+
+.enlace-texto {
+    display: inline-block;
+    width: fit-content;
+    color: var(--azul-oscuro);
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.28em;
+}
+
+.enlace-texto:hover {
+    color: #262626;
+    text-decoration-thickness: 2px;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 3.25rem;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--azul);
+    color: #fff;
+}
+
+.boton:hover { background: var(--azul-oscuro); }
+
+/* Páginas interiores e instalaciones */
+.cabecera-interior {
+    padding-block: clamp(2.8rem, 5.7vw, 5.75rem);
+    background: var(--fondo-oscuro);
+    color: #fff;
+}
+
+.cabecera-interior h1 { font-size: clamp(2.6rem, 5.4vw, 5rem); }
+
+.cabecera-interior h1 + p {
+    max-width: 58ch;
+    margin-bottom: 0;
+    color: #dce4ed;
+    font-size: 1.125rem;
+}
+
+.navegacion-seccion {
+    border-bottom: 1px solid var(--borde);
+    background: #fff;
+}
+
+.navegacion-seccion ul {
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    margin-inline: auto;
+}
+
+.navegacion-seccion a {
+    display: block;
+    padding-block: 0.85rem;
+    color: #262626;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navegacion-seccion a:hover { color: var(--azul-oscuro); }
+.nota-catalogo { margin: -0.6rem 0 1.6rem; color: #505960; }
+
+.instalaciones,
+.servicios-detalle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+.instalaciones img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #f2f2f2;
+    object-fit: cover;
+}
+
+figcaption {
+    padding-top: 0.65rem;
+    color: #505960;
+    font-size: 0.95rem;
+}
+
+.servicios-detalle {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--borde);
+}
+
+.servicios-detalle ul,
+.servicios-detalle ol { padding-left: 1.3rem; }
+.servicios-detalle li { margin-bottom: 0.45rem; }
+
+/* Fichas de vehículos */
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-vehiculo {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--borde);
+    background: #fff;
+    scroll-margin-top: 1.25rem;
+}
+
+.tarjeta-vehiculo:target { outline: 3px solid var(--azul); }
+
+.foto-vehiculo {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #f2f2f2;
+    object-fit: cover;
+}
+
+.tarjeta-contenido {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: start;
+    padding: 1.25rem;
+}
+
+.tarjeta-contenido h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
+
+.precio {
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.precio span {
+    display: block;
+    color: #505960;
+    font-size: 0.875rem;
+}
+
+.precio strong { font-size: 1.4rem; }
+
+.ficha {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 0.7rem;
+    width: 100%;
+    margin: 0 0 1rem;
+    padding-block: 0.8rem;
+    border-block: 1px solid var(--borde);
+    font-size: 0.9375rem;
+}
+
+.ficha dt { font-weight: 700; }
+.ficha dd { margin: 0; text-align: right; }
+
+/* Tabla comparativa */
+.tabla-desplazable { overflow-x: auto; }
+
+table {
+    width: 100%;
+    min-width: 42rem;
+    border-collapse: collapse;
+    background: #fff;
+    text-align: left;
+}
+
+caption {
+    padding: 0.25rem 0 0.7rem;
+    color: #505960;
+    font-size: 0.9375rem;
+    text-align: left;
+}
+
+th, td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+thead { background: var(--fondo-oscuro); color: #fff; }
+tbody tr:nth-child(even) { background: #e9edf1; }
+td:last-child { white-space: nowrap; }
+
+/* Pie de página */
+.pie-pagina {
+    padding-top: 3rem;
+    background: var(--fondo-oscuro);
+    color: #d1dce7;
+}
+
+.pie-columnas {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr 1fr;
+    gap: 1.5rem 2rem;
+    padding-bottom: 2.5rem;
+    overflow-wrap: anywhere;
+}
+
+.pie-pagina .marca { margin-bottom: 0.9rem; color: #fff; }
+
+.pie-pagina h2 {
+    margin: 0.25rem 0 0.65rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+.pie-pagina p { margin: 0; }
+.pie-pagina ul { display: grid; gap: 0.25rem; }
+.pie-pagina a { color: inherit; text-underline-offset: 0.2em; }
+.pie-pagina a:hover { color: #fff; }
+
+.pie-pagina .pie-legal {
+    margin: 0 auto;
+    padding-block: 1.25rem;
+    border-top: 1px solid #43505c;
+    font-size: 0.875rem;
+}
+
+/* Diseño adaptable */
+@media (max-width: 62rem) {
+    .cuadricula { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pie-columnas { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 39rem) {
+    .cabecera-contenido {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-top: 0.75rem;
+    }
+
+    .cabecera .marca img { width: 2.25rem; height: 2.25rem; }
+    .menu-navegacion { flex-wrap: wrap; height: auto; }
+    .menu-navegacion a { min-height: 2.65rem; padding-inline: 0.65rem; }
+
+    .navegacion-seccion ul { gap: 0 0.8rem; }
+    .instalaciones, .servicios-detalle {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 31rem) {
+    .cuadricula { grid-template-columns: 1fr; }
+    .pie-columnas { grid-template-columns: 1fr; }
+}

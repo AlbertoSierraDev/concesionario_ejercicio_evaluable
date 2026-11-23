@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Simula una consulta o una petición de prueba de conducción con el formulario de Vértice Motor.">
+        <title>Contacto y prueba de conducción | Vértice Motor</title>
+        <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+        <link rel="stylesheet" href="css/contacto.css">
+    </head>
+    <body>
+        <a class="salto" href="#contenido">Saltar al contenido</a>
+        <header class="cabecera">
+            <div class="contenedor cabecera-contenido">
+                <a class="marca" href="index.html">
+                    <img src="img/logo.svg" width="44" height="44" alt="">
+                    VÉRTICE MOTOR
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul class="menu-navegacion">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="informacion.html">Vehículos e información</a></li>
+                        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="contenido" tabindex="-1">
+            <section class="cabecera-interior">
+                <div class="contenedor">
+                    <h1>Contacto</h1>
+                    <p>Elige un modelo y cuéntanos qué quieres consultar. También puedes proponer una fecha para una prueba.</p>
+                </div>
+            </section>
+
+            <div class="contenedor seccion contacto-columnas">
+                <section id="formulario" aria-labelledby="titulo-formulario">
+                    <h2 id="titulo-formulario">Tu solicitud</h2>
+                    <p id="ayuda-formulario">Usa datos inventados. Los campos marcados con <abbr title="obligatorio">*</abbr> son obligatorios.</p>
+                    <p class="confirmacion" id="demostracion" tabindex="-1">La demostración se ha completado. Tus datos no se han enviado.</p>
+                    <!-- Solo se incluye un valor fijo en el envío local. -->
+                    <form class="formulario-contacto" action="contacto.html#demostracion" method="get" autocomplete="off" aria-describedby="ayuda-formulario privacidad">
+                        <div class="campos-dobles">
+                            <div class="campo">
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" required minlength="2" maxlength="50">
+                            </div>
+                            <div class="campo">
+                                <label for="apellidos">Apellidos *</label>
+                                <input type="text" id="apellidos" required minlength="2" maxlength="80">
+                            </div>
+                            <div class="campo">
+                                <label for="correo">Correo electrónico *</label>
+                                <input type="email" id="correo" required maxlength="100" placeholder="ejemplo@correo.example">
+                            </div>
+                            <div class="campo">
+                                <label for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" required minlength="9" maxlength="20" pattern="[+]?[0-9][0-9 ]{7,18}[0-9]" aria-describedby="ayuda-telefono">
+                                <small id="ayuda-telefono">Usa cifras y espacios. Puedes incluir + al principio.</small>
+                            </div>
+                            <div class="campo">
+                                <label for="vehiculo">Vehículo de interés *</label>
+                                <select id="vehiculo" required>
+                                    <option value="">Selecciona un modelo</option>
+                                    <option>BMW Serie 1 118i</option>
+                                    <option>BMW Serie 3 320i</option>
+                                    <option>BMW Serie 5 520d</option>
+                                    <option>BMW X3 xDrive20i</option>
+                                    <option>BMW X5 xDrive40i</option>
+                                    <option>BMW M4 Competition Coupé</option>
+                                    <option>Aún no lo he decidido</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="motivo">Motivo del contacto *</label>
+                                <select id="motivo" required>
+                                    <option value="">Selecciona un motivo</option>
+                                    <option>Información sobre un vehículo</option>
+                                    <option>Prueba de conducción</option>
+                                    <option>Financiación</option>
+                                    <option>Mantenimiento</option>
+                                    <option>Otra consulta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <fieldset>
+                            <legend>Método de contacto preferido *</legend>
+                            <div class="opciones">
+                                <label for="preferencia-correo"><input id="preferencia-correo" type="radio" name="demostracion" value="si" required> Correo electrónico</label>
+                                <label for="preferencia-telefono"><input id="preferencia-telefono" type="radio" name="demostracion" value="si"> Teléfono</label>
+                            </div>
+                        </fieldset>
+                        <div class="campo">
+                            <label for="fecha">Fecha preferida para la prueba (opcional)</label>
+                            <input type="date" id="fecha">
+                        </div>
+                        <div class="campo">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea id="observaciones" rows="5" maxlength="600" placeholder="Escribe aquí tu consulta."></textarea>
+                        </div>
+                        <div class="aviso-privacidad" id="privacidad">
+                            <strong>Aviso de privacidad</strong>
+                            <p>El formulario es de prueba. Vértice Motor no recibe ni guarda los datos que escribas.</p>
+                        </div>
+                        <label class="aceptacion" for="aceptacion"><input type="checkbox" id="aceptacion" required> He leído y acepto el aviso de privacidad. *</label>
+                        <div class="acciones">
+                            <button class="boton" type="submit">Enviar demostración</button>
+                            <button class="boton boton-secundario" type="reset">Restablecer campos</button>
+                        </div>
+                    </form>
+                </section>
+
+                <aside class="datos-contacto" aria-labelledby="titulo-datos">
+                    <p class="etiqueta">Datos ficticios</p>
+                    <h2 id="titulo-datos">Vértice Motor Madrid</h2>
+                    <address>
+                        <p><strong>Dirección</strong><br>Avenida del Motor, 24<br>Madrid</p>
+                        <p><strong>Teléfono</strong><br>+34 000 000 000</p>
+                        <p><strong>Correo electrónico</strong><br>hola@verticemotor.example</p>
+                    </address>
+                    <p><strong>Horario de atención</strong><br>Lunes a viernes · 09:30–19:00<br>Sábado · 10:00–14:00</p>
+                    <a class="enlace-texto" href="informacion.html#catalogo">Ver modelos disponibles</a>
+                </aside>
+            </div>
+        </main>
+        <footer class="pie-pagina">
+            <div class="contenedor pie-columnas">
+                <div>
+                    <a class="marca" href="index.html">
+                        <img src="img/logo.svg" width="44" height="44" alt="">
+                        VÉRTICE MOTOR
+                    </a>
+                    <p>Concesionario ficticio de BMW en Madrid.</p>
+                </div>
+                <nav aria-label="Navegación del pie">
+                    <h2>Páginas</h2>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="informacion.html">Vehículos e información</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Contacto ficticio</h2>
+                    <address>
+                        Avenida del Motor, 24 · Madrid<br>
+                        +34 000 000 000<br>
+                        hola@verticemotor.example
+                    </address>
+                </div>
+                <div>
+                    <h2>Horario</h2>
+                    <p>Lunes a viernes · 09:30–19:00<br>Sábado · 10:00–14:00</p>
+                </div>
+            </div>
+            <p class="contenedor pie-legal">Vértice Motor · Proyecto académico independiente de BMW.</p>
+        </footer>
+    </body>
+</html>
